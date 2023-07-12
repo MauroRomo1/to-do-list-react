@@ -1,0 +1,17 @@
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: rgb(0, 187, 190);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 187, 190, 1) 0%,
+    rgba(36, 102, 183, 1) 100%
+  );
+}
+
+footer {
+  margin-top: auto;
+  color: #fff;
+  background-color: #252525;
+}

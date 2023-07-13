@@ -1,12 +1,15 @@
 import React from "react";
 import ItemTarea from "./ItemTarea";
+import { ListGroup } from "react-bootstrap";
 
 const ListaTareas = () => {
   return (
-    <div>
-      <h5>Lista de tareas</h5>
-      <ItemTarea />
-    </div>
+    <ListGroup>
+      <ItemTarea></ItemTarea>
+      <ItemTarea></ItemTarea>
+      <ItemTarea></ItemTarea>
+      <ItemTarea></ItemTarea>
+    </ListGroup>
   );
 };
 

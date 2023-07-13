@@ -3,28 +3,22 @@ import "./index.css";
 
 import { Col, Container, Row } from "react-bootstrap";
 import FormularioTarea from "./components/FormularioTarea";
-import ListaTareas from "./components/listaTareas";
 
 function App() {
   return (
     <>
       <main>
-        <h3 className="text-center text-white my-5">Lista de tareas</h3>
         <Container>
+          <h1 className="text-center text-white my-5">Lista de tareas</h1>
           <Row>
-            <Col>
+            <Col lg={{ span: 6, offset: 3 }}>
               <FormularioTarea />
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <ListaTareas />
             </Col>
           </Row>
         </Container>
       </main>
       <footer className="text-center p-3">
-        <h5>&copy; Todos los derechos reservados.</h5>
+        <h6>&copy; Todos los derechos reservados.</h6>
       </footer>
     </>
   );

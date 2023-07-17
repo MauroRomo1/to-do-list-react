@@ -1,15 +1,20 @@
 import { InputGroup, Form, Button } from "react-bootstrap";
 import ListaTareas from "./ListaTareas";
+import { useState } from "react";
 
 const FormularioTarea = () => {
+  const [tarea, setTarea] = useState("");
+
+  const [listaTareas, setListaTareas] = useState([]);
+
   return (
     <>
       <Form>
         <InputGroup className="mb-3">
           <Form.Control
-            placeholder="Ingrese una tarea"
-            aria-label="Ingrese una tarea"
-            aria-describedby="basic-addon2"
+            value={tarea}
+            onChange={(e) => setTarea(e.target.value)}
+            placeholder="Ingrese una tarea..."
           />
           <Button variant="primary" id="button-addon2">
             Enviar

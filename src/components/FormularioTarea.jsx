@@ -7,16 +7,23 @@ const FormularioTarea = () => {
 
   const [listaTareas, setListaTareas] = useState([]);
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    setListaTareas([...listaTareas, tarea]);
+    setTarea("");
+  };
+
   return (
     <>
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <InputGroup className="mb-3">
           <Form.Control
             value={tarea}
             onChange={(e) => setTarea(e.target.value)}
             placeholder="Ingrese una tarea..."
           />
-          <Button variant="primary" id="button-addon2">
+          <Button variant="primary" type="submit">
             Enviar
           </Button>
         </InputGroup>

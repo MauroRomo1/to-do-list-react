@@ -5,8 +5,8 @@ import { ListGroup } from "react-bootstrap";
 const ListaTareas = ({ propsListaTareas }) => {
   return (
     <ListGroup>
-      {propsListaTareas.map((tarea) => (
-        <ItemTarea key={tarea}></ItemTarea>
+      {propsListaTareas.map((tarea, index) => (
+        <ItemTarea key={index}></ItemTarea>
       ))}
     </ListGroup>
   );

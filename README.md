@@ -3,7 +3,7 @@
   Lista de tareas
 </h1>
 
-Este es un proyecto de una lista de tareas en react, poniendo en practica lo aprendido hasta el momento
+Proyecto de una lista de tareas en react, poniendo en practica lo aprendido hasta el momento
 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Clipboard.png" alt="Clipboard" width="50" height="50" />
 <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Thinking%20Face.png" alt="Thinking Face" width="50" height="50" />
 

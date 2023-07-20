@@ -1,6 +1,9 @@
 import { InputGroup, Form, Button } from "react-bootstrap";
-import ListaTareas from "./ListaTareas";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
+
+import ListaTareas from "./ListaTareas";
 
 const FormularioTarea = () => {
   const [tarea, setTarea] = useState("");
@@ -31,8 +34,8 @@ const FormularioTarea = () => {
             onChange={(e) => setTarea(e.target.value)}
             placeholder="Ingrese una tarea..."
           />
-          <Button variant="primary" type="submit">
-            Enviar
+          <Button title="Añadir tarea" variant="primary" type="submit">
+            <FontAwesomeIcon icon={faPlus} />
           </Button>
         </InputGroup>
       </Form>

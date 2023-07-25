@@ -1,14 +1,20 @@
 import { InputGroup, Form, Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import ListaTareas from "./ListaTareas";
+import { useEffect, useState } from "react";
 
 import ListaTareas from "./ListaTareas";
 
 const FormularioTarea = () => {
   const [tarea, setTarea] = useState("");
+  let tareasLocalStorage =
+    JSON.parse(localStorage.getItem("listaTareas")) || [];
+  const [listaTareas, setListaTareas] = useState(tareasLocalStorage);
 
-  const [listaTareas, setListaTareas] = useState([]);
+  useEffect(() => {
+    localStorage.setItem("listaTareas", JSON.stringify(listaTareas));
+  }, [listaTareas]);
 
   const handleSubmit = (e) => {
     e.preventDefault();

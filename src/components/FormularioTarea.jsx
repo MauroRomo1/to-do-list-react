@@ -4,11 +4,12 @@ import { useEffect, useState } from "react";
 
 const FormularioTarea = () => {
   const [tarea, setTarea] = useState("");
-
-  const [listaTareas, setListaTareas] = useState([]);
+  let tareasLocalStorage =
+    JSON.parse(localStorage.getItem("listaTareas")) || [];
+  const [listaTareas, setListaTareas] = useState(tareasLocalStorage);
 
   useEffect(() => {
-    console.log("Esto fue ejecutado con useEffect");
+    localStorage.setItem("listaTareas", JSON.stringify(listaTareas));
   }, [listaTareas]);
 
   const handleSubmit = (e) => {

@@ -1,7 +1,6 @@
 import { InputGroup, Form, Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
-import ListaTareas from "./ListaTareas";
 import { useEffect, useState } from "react";
 
 import ListaTareas from "./ListaTareas";

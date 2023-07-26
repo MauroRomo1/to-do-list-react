@@ -18,8 +18,12 @@ const FormularioTarea = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    setListaTareas([...listaTareas, tarea]);
-    setTarea("");
+    if (tarea.trim() === "") {
+      console.log("input vacio");
+    } else {
+      setListaTareas([...listaTareas, tarea]);
+      setTarea("");
+    }
   };
 
   const borrarTarea = (tareaBorrar) => {

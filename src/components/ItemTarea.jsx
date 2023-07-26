@@ -1,6 +1,7 @@
-import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button, ListGroup } from "react-bootstrap";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 
 const ItemTarea = ({ tarea, borrarTarea }) => {
   return (
@@ -10,7 +11,6 @@ const ItemTarea = ({ tarea, borrarTarea }) => {
         onClick={() => borrarTarea(tarea)}
         title="Borrar tarea"
         variant="danger"
-        size="sm"
       >
         <FontAwesomeIcon icon={faTrashCan} />
       </Button>

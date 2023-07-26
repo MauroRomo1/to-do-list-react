@@ -1,20 +1,33 @@
 import { InputGroup, Form, Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Swal from "sweetalert2";
 
 import ListaTareas from "./ListaTareas";
 
 const FormularioTarea = () => {
   const [tarea, setTarea] = useState("");
+  let tareasLocalStorage =
+    JSON.parse(localStorage.getItem("listaTareas")) || [];
+  const [listaTareas, setListaTareas] = useState(tareasLocalStorage);
 
-  const [listaTareas, setListaTareas] = useState([]);
+  useEffect(() => {
+    localStorage.setItem("listaTareas", JSON.stringify(listaTareas));
+  }, [listaTareas]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    setListaTareas([...listaTareas, tarea]);
-    setTarea("");
+    if (tarea.trim() === "") {
+      Swal.fire({
+        icon: "error",
+        title: "<h6>Debes de ingresar una tarea</h6>",
+      });
+    } else {
+      setListaTareas([...listaTareas, tarea.trim()]);
+      setTarea("");
+    }
   };
 
   const borrarTarea = (tareaBorrar) => {

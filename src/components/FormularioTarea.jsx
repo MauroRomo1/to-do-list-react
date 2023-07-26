@@ -2,6 +2,7 @@ import { InputGroup, Form, Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
+import Swal from "sweetalert2";
 
 import ListaTareas from "./ListaTareas";
 
@@ -19,9 +20,12 @@ const FormularioTarea = () => {
     e.preventDefault();
 
     if (tarea.trim() === "") {
-      console.log("input vacio");
+      Swal.fire({
+        icon: "error",
+        title: "<h6>Debes de ingresar una tarea</h6>",
+      });
     } else {
-      setListaTareas([...listaTareas, tarea]);
+      setListaTareas([...listaTareas, tarea.trim()]);
       setTarea("");
     }
   };
